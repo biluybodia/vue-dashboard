@@ -22,6 +22,7 @@ export default {
     MainLayout
   }
 };
+
 </script>
 
 <style lang="scss">
