@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <component :is="layout">
-      <router-view />
-    </component>
+    <component :is="layout" />
   </div>
 </template>
 
@@ -22,7 +20,6 @@ export default {
     MainLayout
   }
 };
-
 </script>
 
 <style lang="scss">
