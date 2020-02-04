@@ -3,7 +3,13 @@
     <div class="card-content">
       <span class="card-title">Домашняя бухгалтерия</span>
       <div class="input-field">
-        <input id="email" type="text" class="validate" />
+        <input
+          id="email"
+          type="text"
+          class="validate"
+          v-model.trim="email"
+          :class="{ invalid: $v.email.$dirty && !$v.email.required }"
+        />
         <label for="email">Email</label>
         <small class="helper-text invalid">Email</small>
       </div>
@@ -30,7 +36,18 @@
 </template>
 
 <script>
+import { email, required, minLength } from "vuelidate/lib/validators";
+
 export default {
+  name: "login",
+  data: () => ({
+    email: "",
+    password: ""
+  }),
+  validation: {
+    email: { email, required },
+    password: { required, minLength: minLength(6) }
+  },
   methods: {
     submitHandler() {
       this.$router.push("/");
