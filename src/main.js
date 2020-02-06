@@ -5,8 +5,10 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import dateFilter from "@/filters/date.filter";
+import massagePlugin from "@/utils/message.plugin";
 import "materialize-css/dist/js/materialize.min";
 
+Vue.use(massagePlugin);
 Vue.use(Vuelidate);
 
 Vue.config.productionTip = false;
